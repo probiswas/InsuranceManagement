@@ -1,0 +1,43 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="LoginUser" class="com.exavalu.insurancemgmt.models.User" method="doLogin">
+            <result name="USER">userHome.jsp</result>
+            <result name="UW">underwriterHome.jsp</result>
+            <result name="IO">insuranceOfficerHome.jsp</result>
+            <result name="FAILURE">loginUser.jsp</result>
+        </action>
+        <action name="LoginUnderwriter" class="com.exavalu.insurancemgmt.models.Underwriter" method="doLogin">
+            <result name="SUCCESS">underwriterHome.jsp</result>
+            <result name="FAILURE">loginUnderwriter.jsp</result>
+        </action>
+        <action name="LoginInsuranceOfficer" class="com.exavalu.insurancemgmt.models.InsuranceOfficer" method="doLogin">
+            <result name="SUCCESS">insuranceOfficerHome.jsp</result>
+            <result name="FAILURE">loginInsuranceOfficer.jsp</result>
+        </action>
+        <action name="FileFnol" class="com.exavalu.insurancemgmt.models.Fnol" method="doFileFnol">
+            <result name="SUCCESS">userHome.jsp</result>
+            <result name="FAILURE">logFnol.jsp</result>
+        </action>
+        <action name="ChangeStatusUnderwriter" class="com.exavalu.insurancemgmt.models.Fnol" method="doChangeStatusUnderwriter">
+            <result name="SUCCESS">underwriterHome.jsp</result>
+        </action>
+        <action name="ChangeStatusInsuranceOfficer" class="com.exavalu.insurancemgmt.models.Fnol" method="doChangeStatusInsuranceOfficer">
+            <result name="SUCCESS">insuranceOfficerHome.jsp</result>
+        </action>
+        <action name="SignupUser" class="com.exavalu.insurancemgmt.models.User" method="doSignup">
+            <result name="SUCCESS">index.jsp</result>
+            <result name="FAILURE">signupUser.jsp</result>
+        </action>
+        <action name="ViewDmvInformation" class="com.exavalu.insurancemgmt.models.DmvInformation" method="doShowDmvInformation">
+            <result name="SUCCESS">dmvInformation.jsp</result>
+        </action>
+        <action name="Logout" class="com.exavalu.insurancemgmt.models.User" method="doLogout">
+            <result name="SUCCESS">index.jsp</result>
+        </action>
+    </package>
+</struts>
